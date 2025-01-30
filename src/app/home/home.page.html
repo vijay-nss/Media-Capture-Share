@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Practice with Plugins
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="overflow: scroll;height: auto;">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Practice with Plugins</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button expand="full" (click)="app.shareText('Social Share working')" style="width:100%">Share</ion-button>
+
+  <ion-button expand="full" (click)="app.startTracking()" style="width:100%">Track</ion-button>
+
+  <ion-button expand="full" (click)="app.captureImage()">Take Picture</ion-button>
+
+  <ion-button expand="full" (click)="app.recordVideo()">Record Video</ion-button>
+
+  <ion-button expand="full" (click)="app.startAudioRecording()" *ngIf="!app.isRecording">Start Audio Recording</ion-button>
+
+  <ion-button expand="full" (click)="app.stopAudioRecording()" *ngIf="app.isRecording">Stop Audio Recording</ion-button>
+
+  <ion-button expand="full" (click)="app.playAudio()" *ngIf="app.audioFile">Play Audio</ion-button>
+
+  <ion-button expand="full" (click)="app.pushNotification()">Push Notification</ion-button>
+
+  <ion-button expand="full" (click)="app.shareText(app.deviceToken)" style="width:100%">Share Device Token</ion-button>
+  
+
+</ion-content>
